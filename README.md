@@ -17,4 +17,4 @@ License: GPL v3.
 
 ## Updates:
 - 4/23/20, 1.01: Snack shack tiles accept food.
-- 4/27/20, 1.02: Removed chance of production change and random in-game industry spawning.
+- 4/27/20, 1.02: Removed random production change, removed random in-game industry spawning.
