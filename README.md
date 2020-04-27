@@ -17,4 +17,5 @@ Drawn by Quast65, coded by 2TallTyler.
 License: GPL v3.
 
 ## Updates:
-- 4/23/20, 1.01: Snack shack tiles accept food.
+- 4/23/20, 1: Snack shack tiles accept food.
+- 4/27/20, 2: Removed chance of production change and random in-game industry spawning.
