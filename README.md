@@ -1,4 +1,3 @@
-# beach_ind
 # Beaches as Industry
 
 Beaches which produce and accept passengers. These are adapted from [Quast65's beach object tiles](https://www.tt-forums.net/viewtopic.php?t=62258), which are highly recommended in addition to this set for decoration.
@@ -17,5 +16,5 @@ Drawn by Quast65, coded by 2TallTyler.
 License: GPL v3.
 
 ## Updates:
-- 4/23/20, 1: Snack shack tiles accept food.
-- 4/27/20, 2: Removed chance of production change and random in-game industry spawning.
+- 4/23/20, 1.01: Snack shack tiles accept food.
+- 4/27/20, 1.02: Removed chance of production change and random in-game industry spawning.
