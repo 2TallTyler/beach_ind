@@ -1,0 +1,16 @@
+##grflangid 0x01
+
+STR_GRF_NAME						:Beach as Industry
+STR_GRF_DESC						:{ORANGE}Beaches which produce and accept passengers.{}{}{BLACK}Beach Objects set strongly recommended for decoration.{}{}Drawn by Quast65 and coded by 2TallTyler.{}{}License: GPL v3
+STR_BEACH_NAME						:Beach
+
+
+STR_TOWN                            :{STRING}
+STR_STATION                         :{STRING} {STRING}
+STR_NEARBY_STATION_NAME				:Beach
+
+
+STR_PARAM_NAME_PROB					:Number of Beaches
+STR_PARAM_DESC_PROB					:Select how many beaches will be created during map generation.{}{}Beaches will only generate near towns, but can be funded anywhere.
+STR_PARAM_PROB_FEW					:Few
+STR_PARAM_PROB_MANY					:Many

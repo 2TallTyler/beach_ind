@@ -9,12 +9,7 @@ Beaches which produce and accept passengers. These are adapted from [Quast65's b
 - The player can fund these industries anywhere for about the cost of a hotel in FIRS.
 ## Cargo:
 - The beaches produce and accept passengers in the same quantity as a FIRS hotel.
-- The snack shack tiles also accept food.
 - When FIRS is enabled, the beach also accepts sand (for beach renewal, although this isn't modeled)
 
 Drawn by Quast65, coded by 2TallTyler.
 License: GPL v3.
-
-## Updates:
-- 4/23/20, 1.01: Snack shack tiles accept food.
-- 4/27/20, 1.02: Removed random production change, removed random in-game industry spawning.
