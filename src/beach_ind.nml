@@ -2,25 +2,21 @@ grf {
 	grfid: "TT\02\02";
 	name: string(STR_GRF_NAME);
 	desc: string(STR_GRF_DESC);
-	version: 2;
-	min_compatible_version: 0;
-	param 0 {
-  beach_prob {
-   name: string(STR_PARAM_NAME_PROB);
-   desc: string(STR_PARAM_DESC_PROB);
-   min_value: 0;
-   max_value: 1;
-   names: {
-            0: string(STR_PARAM_PROB_FEW);
-            1: string(STR_PARAM_PROB_MANY);
-   };
-  }
- }
+	version: 3;
+	min_compatible_version: 3;
 	
+	param 0 { 
+		param_allow_ingame_gen {
+			name: string(STR_PARAM_NAME_INGAME);
+			desc: string(STR_PARAM_DESC_INGAME);
+			type: bool;
+			def_value: 0;
+		}
+	}
 }
 
 cargotable {
-	PASS, SAND, FOOD
+	PASS, SAND
 }
 
 spriteset(spriteset_beach, "src/gfx/beach-tiles.png") {
@@ -143,8 +139,8 @@ spritelayout beach_sprite_NE_3 {
 
 /* Location Checks */
 
-switch (FEAT_INDUSTRIES, SELF, town_distance, town_euclidean_dist(0, 0)) { 0 .. 144: return CB_RESULT_LOCATION_ALLOW; return CB_RESULT_LOCATION_DISALLOW; }
-switch (FEAT_INDUSTRIES, SELF, generation_check, extra_callback_info2 == IND_CREATION_GENERATION) {1: town_distance; return CB_RESULT_LOCATION_ALLOW; }
+switch (FEAT_INDUSTRIES, SELF, town_distance, town_euclidean_dist(0, 0)) { 0 .. 400: return CB_RESULT_LOCATION_ALLOW; return CB_RESULT_LOCATION_DISALLOW; }
+switch (FEAT_INDUSTRIES, SELF, generation_check, extra_callback_info2 == IND_CREATION_GENERATION) {1: town_distance; return CB_RESULT_LOCATION_ALLOW; } // Only Generated beaches check distance to town
 
 switch(FEAT_INDUSTRYTILES, SELF, beach_ocean_check, nearby_tile_water_class(0,0) == WATER_CLASS_SEA) { 1: return CB_RESULT_LOCATION_ALLOW; return CB_RESULT_LOCATION_DISALLOW; }
 switch(FEAT_INDUSTRYTILES, SELF, beach_slope_NE_check, nearby_tile_slope(0,0) == SLOPE_NE) { 0: return CB_RESULT_LOCATION_DISALLOW; beach_ocean_check; }
@@ -376,24 +372,23 @@ item(FEAT_INDUSTRYTILES, beach_tile_SW_3) {
 	}
 }
 
-if (beach_prob==0) {
-
 item(FEAT_INDUSTRIES, beach_industry) {
 	property {
-		substitute					: 0;
-		life_type					: IND_LIFE_TYPE_BLACK_HOLE;
-		cargo_types:				[
-											accept_cargo("PASS"),
-											accept_cargo("SAND"),
-											produce_cargo("PASS",17),
-									];
-		name						: string(STR_BEACH_NAME);
-		nearby_station_name			: string(STR_STATION, string(STR_TOWN), string(STR_NEARBY_STATION_NAME));
-		prob_random					: 40;
-		prob_in_game				: 0;
-		fund_cost_multiplier		: 101;
-		map_colour					: 143;
-		spec_flags					: bitmask(IND_FLAG_BUILT_ON_WATER);		
+		substitute: 0;
+		life_type: IND_LIFE_TYPE_BLACK_HOLE;
+		cargo_types:
+			[
+				accept_cargo("PASS"),
+				accept_cargo("SAND"),
+				produce_cargo("PASS",17),
+			];
+		name: string(STR_BEACH_NAME);
+		nearby_station_name: string(STR_STATION, string(STR_TOWN), string(STR_NEARBY_STATION_NAME));
+		prob_random: 10;
+		prob_in_game: (param_allow_ingame_gen == 0) ? 0 : 15;
+		fund_cost_multiplier: 101;
+		map_colour: 143;
+		spec_flags: bitmask(IND_FLAG_BUILT_ON_WATER);		
 		layouts: [
 			beach_layout_NE_1,
 			beach_layout_NE_2,
@@ -410,50 +405,8 @@ item(FEAT_INDUSTRIES, beach_industry) {
 			];
 	}
 	graphics {
-		location_check				: generation_check;
-		monthly_prod_change			: CB_RESULT_IND_PROD_NO_CHANGE;
-		random_prod_change			: CB_RESULT_IND_PROD_NO_CHANGE;
+		location_check: generation_check;
+		monthly_prod_change: CB_RESULT_IND_PROD_NO_CHANGE;
+		random_prod_change: CB_RESULT_IND_PROD_NO_CHANGE;
 	}
-}
-}
-
-if (beach_prob==1) {
-
-item(FEAT_INDUSTRIES, beach_industry) {
-	property {
-		substitute					: 0;
-		life_type					: IND_LIFE_TYPE_BLACK_HOLE;
-		cargo_types:				[
-											accept_cargo("PASS"),
-											accept_cargo("SAND"),
-											produce_cargo("PASS",17),
-									];
-		name						: string(STR_BEACH_NAME);
-		nearby_station_name			: string(STR_STATION, string(STR_TOWN), string(STR_NEARBY_STATION_NAME));
-		prob_random					: 200;
-		prob_in_game				: 0;
-		fund_cost_multiplier		: 101;
-		map_colour					: 143;
-		spec_flags					: bitmask(IND_FLAG_BUILT_ON_WATER);		
-		layouts: [
-			beach_layout_NE_1,
-			beach_layout_NE_2,
-			beach_layout_NE_3,
-			beach_layout_SE_1,
-			beach_layout_SE_2,
-			beach_layout_SE_3,
-			beach_layout_NW_1,
-			beach_layout_NW_2,
-			beach_layout_NW_3,
-			beach_layout_SW_1,
-			beach_layout_SW_2,
-			beach_layout_SW_3,
-			];
-	}
-	graphics {
-		location_check				: generation_check;
-		monthly_prod_change			: CB_RESULT_IND_PROD_NO_CHANGE;
-		random_prod_change			: CB_RESULT_IND_PROD_NO_CHANGE;
-	}
-}
 }
