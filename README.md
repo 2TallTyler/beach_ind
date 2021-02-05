@@ -11,5 +11,9 @@ Beaches which produce and accept passengers. These are adapted from [Quast65's b
 - The beaches produce and accept passengers in the same quantity as a FIRS hotel.
 - When FIRS is enabled, the beach also accepts sand (for beach renewal, although this isn't modeled)
 
-Drawn by Quast65, coded by 2TallTyler.
-License: GPL v3.
+## Translations
+- German (WoelfiVW)
+
+## Credits
+- Drawn by Quast65
+- Coded by 2TallTyler
