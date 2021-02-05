@@ -1,0 +1,13 @@
+##grflangid 0x02
+
+STR_GRF_NAME						:{TITLE} {VERSION}
+STR_GRF_DESC						:{ORANGE}Strände werden Passagiere produzieren und akzeptieren.{}{}{BLACK}Das "Beach Objects set" ist für die Dekoration empfohlen.{}{}Gezeichnet durch Quast65 und programmiert von 2TallTyler.{}{}Lizens: GPL v3
+STR_BEACH_NAME						:Strand
+
+
+STR_TOWN                            :{STRING}
+STR_STATION                         :{STRING} {STRING}
+STR_NEARBY_STATION_NAME				:Strand
+
+STR_PARAM_NAME_INGAME				:Generiere Strände während des Spielens
+STR_PARAM_DESC_INGAME				:{WHITE}Aus:{BLACK} Strände werden nur während der Spielfeld-Erschaffung gebaut.{}{}{WHITE}An:{BLACK} Strände werden sowohl während der Spielfeld-Erschaffung, als auch während des Spielens gebaut.
