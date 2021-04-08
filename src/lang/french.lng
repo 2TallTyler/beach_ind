@@ -1,4 +1,4 @@
-##grflangid 0x01
+##grflangid 0x03
 
 STR_GRF_NAME						:{TITLE} {VERSION}
 STR_GRF_DESC						:{ORANGE}Des plages qui produisent et acceptent les passagers.{}{}{BLACK}Le NewGRF "Beach Objects set" est fortement recommandé pour la décoration.{}{}Dessiné par Quast65 et codé par 2TallTyler.{}{}License: GPL v3
