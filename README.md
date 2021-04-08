@@ -15,7 +15,9 @@ Beaches which produce and accept passengers. These are adapted from [Quast65's b
 - When FIRS is enabled, the beach also accepts sand (for beach renewal, although this isn't modeled)
 
 ## Translations
+- French (DonaldDuck313)
 - German (WoelfiVW)
+- Swedish (DonaldDuck313)
 
 ## Credits
 - Drawn by Quast65
