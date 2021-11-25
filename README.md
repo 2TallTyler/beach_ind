@@ -16,7 +16,10 @@ Beaches which produce and accept passengers. These are adapted from [Quast65's b
 
 ## Translations
 - French (DonaldDuck313)
+- Galician (pvillaverde)
 - German (WoelfiVW)
+- Spanish (pvillaverde)
+- Spanish (Mexican) (pvillaverde)
 - Swedish (DonaldDuck313)
 
 ## Credits
